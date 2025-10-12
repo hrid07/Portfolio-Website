@@ -327,7 +327,19 @@ span{
 .about-text {
     flex: 1;
     min-width: 300px;
+    opacity: 0; 
+    transform: translateY(100%); 
+    animation: slideInLeft 1s forwards; 
 }
+
+
+@keyframes slideInLeft {
+    to {
+        transform: translateY(0); 
+        opacity: 1; 
+    }
+}
+
 
 .about-text h1 {
     font-size: 3.5rem;
@@ -550,7 +562,6 @@ span{
     color: #ccc;
 }
 
-/* ---------- Responsive ---------- */
 @media (max-width: 900px) {
     .projects-section {
         padding: 10rem 6%;
