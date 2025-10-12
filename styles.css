@@ -516,7 +516,7 @@ span{
 }
 
 .projects-text p {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #ccc;
     line-height: 1.8;
     margin-bottom: 5rem;
@@ -530,20 +530,30 @@ span{
 }
 
 .project-card {
-    flex: 1 1 300px;
-    background-color: #1b1b1b;
-    border: 2px solid #b74b4b;
-    border-radius: 1rem;
-    padding: 2rem;
-    text-align: center;
-    transition: 0.3s ease;
+    display: block; /* Make the link behave like a block element */
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Keep the text color same */
+    background-color: #1a1a1a;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
 }
 
+/* Image inside project card */
 .project-card img {
     width: 100%;
     border-radius: 1rem;
     margin-bottom: 1.5rem;
+    display: block; /* ensures proper clickable area */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px rgba(183, 75, 75, 0.3);
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+
 }
 
 .project-card img:hover {
@@ -551,16 +561,30 @@ span{
     box-shadow: 0 0 25px #b74b4b;
 }
 
+/* Project title */
 .project-card h3 {
     font-size: 2rem;
     color: #b74b4b;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
+/* Optional description */
 .project-card p {
     font-size: 1.2rem;
     color: #ccc;
 }
+
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #b74b4b, 0 0 50px #b74b4b;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
 
 @media (max-width: 900px) {
     .projects-section {
@@ -578,6 +602,7 @@ span{
     .projects-container {
         flex-direction: column;
         gap: 3rem;
+        align-items: center; 
     }
 }
 
