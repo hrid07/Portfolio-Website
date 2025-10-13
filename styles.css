@@ -937,7 +937,7 @@ box-shadow: 0 0 50px #b74b4b;
     }
 }
 
-/* ---------- PURE RESPONSIVENESS ADD-ON ---------- */
+
 
 /* Universal responsiveness */
 @media (max-width: 1200px) {
@@ -957,17 +957,24 @@ box-shadow: 0 0 50px #b74b4b;
         font-size: 48%;
     }
 }
+@media (max-width: 576px) {
+    html {
+        font-size: 45%;
+    }
+}
 
-/* Mobile navbar toggle */
 .menu-icon {
     display: none;
     font-size: 2.8rem;
     color: #b74b4b;
     cursor: pointer;
     z-index: 200;
+    
+
+
 }
 
-/* Show hamburger on small screens */
+
 @media (max-width: 995px) {
     .menu-icon {
         display: block;
@@ -979,12 +986,12 @@ box-shadow: 0 0 50px #b74b4b;
         position: absolute;
         top: 100%;
         right: 0;
-        width: 70%;
+        width: 50%;
         background: #161616;
         border-left: 3px solid #b74b4b;
         border-bottom: 3px solid #b74b4b;
         border-bottom-left-radius: 2rem;
-        text-align: right;
+        text-align: center;
         padding: 2rem;
         transition: all 0.3s ease;
         z-index: 150;
