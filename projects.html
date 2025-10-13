@@ -18,6 +18,11 @@
             <a href="experience.html">Experience</a>
             <a href="contact.html">Contact</a>
         </nav>
+        
+<div class="menu-icon" id="menu-icon">
+    <i class="fas fa-bars"></i>
+</div>
+
     </header>
     
 <section id="projects" class="projects-section">
@@ -44,6 +49,15 @@
   </div>
 </section>
 
+<script>
+    const menuIcon = document.querySelector('#menu-icon');
+    const nav = document.querySelector('nav');
+
+    menuIcon.onclick = () => {
+        nav.classList.toggle('active');
+        menuIcon.classList.toggle('open');
+    };
+</script>
 
     
 </body>
