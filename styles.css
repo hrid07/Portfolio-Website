@@ -553,9 +553,9 @@ box-shadow: 0 0 50px #b74b4b;
 }
 
 .project-card {
-    display: block; /* Make the link behave like a block element */
-    text-decoration: none; /* Remove underline */
-    color: inherit; /* Keep the text color same */
+    display: block; 
+    text-decoration: none; 
+    color: inherit; 
     background-color: #1a1a1a;
     border-radius: 15px;
     overflow: hidden;
@@ -565,12 +565,12 @@ box-shadow: 0 0 50px #b74b4b;
     cursor: pointer;
 }
 
-/* Image inside project card */
+
 .project-card img {
     width: 100%;
     border-radius: 1rem;
     margin-bottom: 1.5rem;
-    display: block; /* ensures proper clickable area */
+    display: block; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 0 15px rgba(183, 75, 75, 0.3);
     object-fit: cover;
@@ -584,7 +584,7 @@ box-shadow: 0 0 50px #b74b4b;
     box-shadow: 0 0 25px #b74b4b;
 }
 
-/* Project title */
+
 .project-card h3 {
     font-size: 2rem;
     color: #b74b4b;
@@ -592,7 +592,7 @@ box-shadow: 0 0 50px #b74b4b;
     text-align: center;
 }
 
-/* Optional description */
+
 .project-card p {
     font-size: 1.2rem;
     color: #ccc;
@@ -653,7 +653,7 @@ box-shadow: 0 0 50px #b74b4b;
 
 
 
-/* Contact Section */
+
 .contact-section {
     background-color: #0b0b0b;
     padding: 12rem 10%;
@@ -723,7 +723,7 @@ box-shadow: 0 0 50px #b74b4b;
     
 }
 
-/* Social icons in Contact section - same as Home */
+
 .contact-socials {
     margin-top: 3rem;
 }
@@ -841,7 +841,6 @@ box-shadow: 0 0 50px #b74b4b;
 }
 
 
-/* Experience Section */
 .experience-section {
     background-color: #0b0b0b;
     padding: 12rem 10%;
@@ -939,7 +938,6 @@ box-shadow: 0 0 50px #b74b4b;
 
 
 
-/* Universal responsiveness */
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -1008,7 +1006,7 @@ box-shadow: 0 0 50px #b74b4b;
     }
 }
 
-/* Make sections fit smaller screens */
+
 @media (max-width: 768px) {
     .home {
         flex-direction: column;
@@ -1021,7 +1019,7 @@ box-shadow: 0 0 50px #b74b4b;
     .home-img {
         width: 70vw;
         height: 70vw;
-        border-radius: 50%; /* ← keeps circular frame */
+        border-radius: 50%; 
         object-fit: cover;
     }
 
@@ -1033,7 +1031,7 @@ box-shadow: 0 0 50px #b74b4b;
     .about-image img {
         width: 70vw;
         height: 70vw;
-        border-radius: 50%; /* ← keeps circular frame */
+        border-radius: 50%; 
         object-fit: cover;
     }
 
@@ -1048,18 +1046,18 @@ box-shadow: 0 0 50px #b74b4b;
     }
 }
 
-/* Tiny screen optimization */
+
 @media (max-width: 480px) {
     .home-img {
         width: 80vw;
         height: 80vw;
-        border-radius: 50%; /* ← still round */
+        border-radius: 50%; 
     }
 
     .about-image img {
         width: 80vw;
         height: 80vw;
-        border-radius: 50%; /* ← still round */
+        border-radius: 50%; 
     }
 
     nav {
@@ -1075,13 +1073,13 @@ box-shadow: 0 0 50px #b74b4b;
     .home-img {
         width: 90vw;
         height: 90vw;
-        border-radius: 50%; /* ← still round */
+        border-radius: 50%; 
     }
 
     .about-image img {
         width: 90vw;
         height: 90vw;
-        border-radius: 50%; /* ← still round */
+        border-radius: 50%; 
     }
 
     nav {
