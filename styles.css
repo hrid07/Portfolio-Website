@@ -99,7 +99,7 @@ nav a.active
 section{
     min-height:100vh ;
     padding: 5rem 9% 5rem;
-
+    scroll-margin-top: 8rem; /* Added to offset fixed header */
 }
 
 .home{
@@ -109,7 +109,8 @@ section{
     gap: 8rem;
     background-color: black;
     padding-top: 12rem;
-     margin-left: 5rem;
+    margin-left: 5rem;
+    scroll-margin-top: 0; /* Home doesn't need it as it's at the top */
 }
 
 .home.home-content h1{
