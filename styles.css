@@ -145,9 +145,9 @@ span{
     align-items: center;
     border-radius: 50%;
     border: 5px solid #b74b4b; 
-    padding: 8px; 
-    width: 32vw;  
-    height: 23vw; 
+    padding: 7px; 
+    width: 38vw;  
+    height: 25vw; 
     overflow: hidden;
     box-shadow: 0 0 25px #b74b4b;
     animation: pulseGlow 3s infinite ease-in-out;
@@ -1103,4 +1103,192 @@ box-shadow: 0 0 50px #b74b4b;
         padding: 1rem;
         font-size: 1.4rem;
     }
+}
+
+
+/* Skills Section */
+.skills-section {
+    background-color: #121212;
+    padding: 12rem 10%;
+    color: #ededed;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #b74b4b;
+    margin-bottom: 5rem;
+    transform: translateY(100%);
+    animation: slideInLeft 1s forwards;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    transform: translateX(100%);
+    animation: slideInLeft 1.2s forwards;
+}
+
+.skill-card {
+    background-color: #161616;
+    border-left: 5px solid #b74b4b;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(183, 75, 75, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #b74b4b;
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: #b74b4b;
+    margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.skill-card p {
+    font-size: 1.4rem;
+    color: #ccc;
+}
+
+/* Certifications Section */
+.certifications-section {
+    background-color: #0b0b0b;
+    padding: 12rem 10%;
+    color: #ededed;
+    text-align: center;
+}
+
+.certifications-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #b74b4b;
+    margin-bottom: 5rem;
+    transform: translateY(100%);
+    animation: slideInLeft 1s forwards;
+}
+
+.certifications-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    transform: translateX(100%);
+    animation: slideInLeft 1.2s forwards;
+}
+
+.cert-card {
+    background-color: #161616;
+    border-left: 5px solid #b74b4b;
+    border-radius: 1rem;
+    padding: 2rem;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(183, 75, 75, 0.3);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px #b74b4b;
+}
+
+.cert-card h3 {
+    font-size: 2rem;
+    color: #b74b4b;
+    margin-bottom: 0.5rem;
+}
+
+.cert-card p {
+    font-size: 1.4rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .skills-container, .certifications-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .skill-card, .cert-card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-title, .certifications-title {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+    
+    .skill-card h3, .cert-card h3 {
+        font-size: 1.6rem;
+    }
+    
+    .skill-card p, .cert-card p {
+        font-size: 1.2rem;
+    }
+}
+.cert-card {
+    position: relative; /* Needed for the overlay */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.cert-card .cert-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: rgba(0,0,0,0.9);
+    display: none; /* Hidden by default */
+    z-index: 10;
+    transition: all 0.3s ease;
+    padding: 1rem;
+}
+
+/* Hover effect for desktop */
+.cert-card:hover .cert-image {
+    display: block;
+}
+
+/* Optional: lightbox overlay for click */
+#cert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#cert-overlay img {
+    max-width: 90%;
+    max-height: 90%;
+    border: 5px solid #b74b4b;
+    box-shadow: 0 0 50px #b74b4b;
+    border-radius: 1rem;
 }
