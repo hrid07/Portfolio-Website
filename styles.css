@@ -276,7 +276,7 @@ span{
         content: "Student";
     }
     21%,40%{
-        content: "CSE Engineer";
+        content: "Software Developer";
     }
     41%,60%{
         content: "Web Developer";
@@ -307,7 +307,8 @@ span{
       
     }
     .home-img img{
-        width: 70vw;
+        width: 100vw;
+        height: 100vw;
         margin-top: 4rem;
     }
 }
@@ -1261,18 +1262,18 @@ box-shadow: 0 0 50px #b74b4b;
     height: 100%;
     object-fit: contain;
     background-color: rgba(0,0,0,0.9);
-    display: none; /* Hidden by default */
+    display: none; 
     z-index: 10;
     transition: all 0.3s ease;
     padding: 1rem;
 }
 
-/* Hover effect for desktop */
+
 .cert-card:hover .cert-image {
     display: block;
 }
 
-/* Optional: lightbox overlay for click */
+
 #cert-overlay {
     position: fixed;
     top: 0;
