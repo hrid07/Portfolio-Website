@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Cursor Logic
   const cursorDot = document.querySelector('.cursor-dot');
   const cursorOutline = document.querySelector('.cursor-outline');
-  const interactiveElements = document.querySelectorAll('a, button, .menu-icon, .social-icons a, .project-card, .skill-card, .cert-card, .experience-card');
+  const interactiveElements = document.querySelectorAll('a, button, .menu-icon, .social-icons a, .project-card, .skill-card, .cert-card, .experience-card, .project-tech-stack span');
 
   let mouseX = 0;
   let mouseY = 0;
