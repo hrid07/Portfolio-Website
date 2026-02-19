@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Hrid Raian Khan - Skills & Certifications</title>
 </head>
+
 <body>
     <header>
         <a href="#" class="logo">Hrid Raian Khan</a>
@@ -56,48 +58,45 @@
         </div>
     </section>
 
-    
+
     <!-- Certifications Section -->
-<section class="certifications-section">
-    <h1 class="certifications-title">Certifications</h1>
-    <div class="certifications-container">
-        <div class="cert-card">
-            <h3>Basics of Python</h3>
-            <p>UniAthena</p>
-            <img src="image/Basics of Python.png" alt="Python Certificate" class="cert-image">
+    <section class="certifications-section">
+        <h1 class="certifications-title">Certifications</h1>
+        <div class="certifications-container">
+            <div class="cert-card">
+                <h3>Basics of Python</h3>
+                <p>UniAthena</p>
+                <img src="image/Basics of Python.png" alt="Python Certificate" class="cert-image">
+            </div>
+            <div class="cert-card">
+                <h3>Online Safety</h3>
+                <p>GP Academy</p>
+                <img src="image/Online Safety.jpg" alt="Online Safety Certificate" class="cert-image">
+            </div>
+            <div class="cert-card">
+                <h3>Cyber Security Career Launchpad</h3>
+                <p>Ostad</p>
+                <img src="image/cyber.jpg" alt="Cyber Security Certificate" class="cert-image">
+            </div>
+            <div class="cert-card">
+                <h3>IT Essentials</h3>
+                <p>Cisco Networking Academy</p>
+                <img src="image/IT Essentials.jpg" alt="IT Essentials Certificate" class="cert-image">
+            </div>
+            <div class="cert-card">
+                <h3>Critical Infrastructure Protection</h3>
+                <p>OPSWAT</p>
+                <img src="image/Infrastructure.png" alt="Critical Infrastructure Certificate" class="cert-image">
+            </div>
         </div>
-        <div class="cert-card">
-            <h3>Online Safety</h3>
-            <p>GP Academy</p>
-            <img src="image/Online Safety.jpg" alt="Online Safety Certificate" class="cert-image">
-        </div>
-        <div class="cert-card">
-            <h3>Cyber Security Career Launchpad</h3>
-            <p>Ostad</p>
-            <img src="image/cyber.jpg" alt="Cyber Security Certificate" class="cert-image">
-        </div>
-        <div class="cert-card">
-            <h3>IT Essentials</h3>
-            <p>Cisco Networking Academy</p>
-            <img src="image/IT Essentials.jpg" alt="IT Essentials Certificate" class="cert-image">
-        </div>
-        <div class="cert-card">
-            <h3>Critical Infrastructure Protection</h3>
-            <p>OPSWAT</p>
-            <img src="image/Infrastructure.png" alt="Critical Infrastructure Certificate" class="cert-image">
-        </div>
-    </div>
-</section>
+    </section>
 
 
-<script>
-    const menuIcon = document.querySelector('#menu-icon');
-    const nav = document.querySelector('nav');
+    <canvas id="bg-canvas"></canvas>
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
 
-    menuIcon.onclick = () => {
-        nav.classList.toggle('active');
-        menuIcon.classList.toggle('open');
-    };
-</script>
+    <script src="script.js"></script>
 </body>
+
 </html>
