@@ -105,6 +105,146 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+  // Pre-reveal setup
+  const revealElements = document.querySelectorAll('.education-card, .skill-card, .cert-card, .project-card, .experience-card, .home-img, .home-content h1, .home-content h3, .home-content p, .home-content .btn, .social-icons, .education-title, .skills-title, .certifications-title, .experience-title, .contact-section h1, .contact-info, .contact-form');
+  revealElements.forEach(el => {
+    gsap.set(el, { autoAlpha: 0, y: 30 });
+  });
+
+  // Register ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Scroll Animations Logic
+  const initScrollAnimations = () => {
+    // Generic Section Title Reveal
+    document.querySelectorAll('section h1, section h2, .education-title, .skills-title, .certifications-title, .experience-title').forEach(title => {
+      gsap.to(title, {
+        autoAlpha: 1,
+        y: 0,
+        filter: 'blur(0px)',
+        duration: 1.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: title,
+          start: 'top 85%',
+          toggleActions: 'play none none reverse'
+        }
+      });
+    });
+
+    // Home Section Animations (Wait for intro)
+    const homeElements = ['.home-content h1', '.home-content h3', '.home-content p', '.home-content .btn', '.social-icons'];
+    gsap.to(homeElements, {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.15,
+      duration: 1,
+      ease: 'power4.out',
+      delay: 3.2 // Adjusted to ensure intro is fully gone
+    });
+
+    gsap.to('.home-img', {
+      autoAlpha: 1,
+      y: 0,
+      scale: 1,
+      duration: 1.5,
+      ease: 'elastic.out(1, 0.8)',
+      delay: 3.5
+    });
+
+    // Education Cards Stagger
+    gsap.to('.education-card', {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.education-container',
+        start: 'top 80%'
+      }
+    });
+
+    // Skill Cards Stagger
+    gsap.to('.skill-card', {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: '.skills-container',
+        start: 'top 85%'
+      }
+    });
+
+    // Project Cards Reveal
+    gsap.to('.project-card', {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.projects-container',
+        start: 'top 80%'
+      }
+    });
+
+    // Certifications Cards Stagger
+    gsap.to('.cert-card', {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.certifications-container',
+        start: 'top 85%'
+      }
+    });
+
+    // Experience Card Reveal
+    gsap.to('.experience-card', {
+      autoAlpha: 1,
+      y: 0,
+      duration: 1.2,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.experience-container',
+        start: 'top 85%'
+      }
+    });
+
+    // Contact Form & Info Reveal
+    gsap.to(['.contact-info', '.contact-form'], {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.3,
+      duration: 1,
+      ease: 'power2.out',
+      scrollTrigger: {
+        trigger: '.contact-content',
+        start: 'top 85%'
+      }
+    });
+
+    // Parallax Effect for Background Canvas (Subtle)
+    gsap.to('#bg-canvas', {
+      yPercent: 15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: 'body',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1
+      }
+    });
+  };
+
+  // Run animations
+  initScrollAnimations();
+
   // Background Particles
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');

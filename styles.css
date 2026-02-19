@@ -12,6 +12,11 @@
     cursor: none;
 }
 
+/* Hide elements before reveal */
+.reveal-hidden {
+    opacity: 0;
+}
+
 a,
 button,
 .menu-icon,
@@ -145,9 +150,9 @@ span {
     font-size: 4rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    margin-bottom: 1rem;
+    font-weight: 700;
     margin-left: 1rem;
-    transform: translateX(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 .home-content p {
@@ -171,8 +176,6 @@ span {
     box-shadow: 0 0 25px #94A378;
     animation: pulseGlow 3s infinite ease-in-out;
     margin-top: 2rem;
-    transform: translateY(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 .home-img img {
@@ -250,8 +253,6 @@ span {
     font-weight: 600;
     cursor: pointer;
     transition: 0.3s ease;
-    transform: translateY(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 .btn:hover {
@@ -336,10 +337,12 @@ span {
     80% {
         content: "Tech Enthusiast";
     }
+
     81%,
     90% {
         content: "Web Developer";
-}
+    }
+
     91%,
     100% {
         content: "Frontend Developer";
@@ -398,9 +401,6 @@ span {
 .about-text {
     flex: 1;
     min-width: 300px;
-    opacity: 0;
-    transform: translateY(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 
@@ -432,8 +432,6 @@ span {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    transform: translateX(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 .about-image img {
@@ -503,8 +501,6 @@ span {
     color: #94A378;
     margin-bottom: 5rem;
     position: relative;
-    transform: translateY(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 .education-container {
@@ -512,8 +508,6 @@ span {
     flex-direction: column;
     gap: 3rem;
     align-items: center;
-    transform: translateX(100%);
-    animation: slideInLeft 1.2s forwards;
 }
 
 .education-card {
@@ -605,8 +599,6 @@ span {
     font-size: 3.5rem;
     color: #94A378;
     margin-bottom: 1rem;
-    transform: translateX(100%);
-    animation: slideInLeft 1.2s forwards;
 }
 
 .projects-text p {
@@ -614,8 +606,6 @@ span {
     color: #ccc;
     line-height: 1.8;
     margin-bottom: 5rem;
-    transform: translateX(100%);
-    animation: slideInLeft 1.2s forwards;
 }
 
 .projects-container {
@@ -623,8 +613,6 @@ span {
     justify-content: space-between;
     gap: 3rem;
     flex-wrap: wrap;
-    transform: translateY(100%);
-    animation: slideInLeft 1.2s forwards;
 }
 
 .project-card {
@@ -730,8 +718,6 @@ span {
     color: #94A378;
     margin-bottom: 4rem;
     font-weight: 700;
-    transform: translateY(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 .contact-content {
@@ -748,8 +734,6 @@ span {
     flex: 1;
     min-width: 280px;
     text-align: left;
-    transform: translateY(100%);
-    animation: slideInLeft 1s forwards;
 }
 
 .contact-info h3 {
@@ -1176,61 +1160,85 @@ span {
 
 /* Skills Section */
 .skills-section {
-    background-color: transparent;
-    padding: 12rem 10%;
-    color: #ededed;
+    padding: 10rem 10%;
     text-align: center;
 }
 
 .skills-title {
-    font-size: 4rem;
+    font-size: 40px;
     font-weight: 700;
     color: #94A378;
-    margin-bottom: 5rem;
-    transform: translateY(100%);
-    animation: slideInLeft 1s forwards;
+    margin-bottom: 6rem;
 }
 
 .skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 3rem;
-    transform: translateX(100%);
-    animation: slideInLeft 1.2s forwards;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .skill-card {
-    background-color: #161616;
-    border-left: 5px solid #94A378;
-    border-radius: 1rem;
-    padding: 2rem;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(148, 163, 120, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #0a0a0a;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.2rem;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .skill-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px #94A378;
+    transform: translateY(-8px);
+    background-color: #111;
+    border-color: rgba(148, 163, 120, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .skill-card i {
-    font-size: 3rem;
-    color: #94A378;
-    margin-bottom: 1rem;
+    font-size: 5rem;
+    margin-bottom: 0.5rem;
 }
 
 .skill-card h3 {
     font-size: 1.8rem;
+    font-weight: 500;
     color: #fff;
+    letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
 }
 
 .skill-card p {
-    font-size: 1.4rem;
-    color: #ccc;
+    font-size: 1.3rem;
+    color: #888;
+    line-height: 1.5;
+    max-width: 180px;
+}
+
+/* Brand Colors for Icons */
+.java-icon {
+    color: #f89820;
+}
+
+.cpp-icon {
+    color: #00599c;
+}
+
+.web-icon {
+    color: #e34f26;
+}
+
+.db-icon {
+    color: #336791;
+}
+
+.tools-icon {
+    color: #888888;
 }
 
 /* Certifications Section */
@@ -1385,9 +1393,9 @@ span {
 }
 
 .cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 2px solid #94A378;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #94A378;
     position: fixed;
     top: 0;
     left: 0;
@@ -1406,8 +1414,8 @@ span {
 }
 
 .cursor-outline.active {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     opacity: 0;
 }
 
@@ -1430,26 +1438,27 @@ span {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.85);
-    /* Slightly transparent to show binary rain */
+   
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10000;
     overflow: hidden;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .intro-text {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .intro-text span {
     font-size: clamp(4.5rem, 18vw, 12rem);
-    font-weight: 200;
+    font-weight: 300;
     color: white;
     letter-spacing: 0.1em;
     display: inline-flex;
-    opacity: 0;
+    opacity: 5;
     filter: blur(15px);
     transform: translateY(30px);
 }
