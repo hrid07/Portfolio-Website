@@ -9,7 +9,6 @@
     pointer-events: none;
 }
 
-/* Mask to fade binary numbers at top and bottom */
 #binary-bg::after {
     content: '';
     position: absolute;
@@ -34,7 +33,7 @@
     font-weight: 600;
     line-height: 1;
     color: rgba(255, 255, 255, 0.15);
-    /* White with subtle transparency */
+  
     white-space: pre;
     writing-mode: vertical-rl;
     text-orientation: upright;

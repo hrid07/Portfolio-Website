@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Welcome Intro Animation
+
   const introTL = gsap.timeline({
     onComplete: () => {
       document.querySelector('#welcome-intro').style.display = 'none';
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         from: 'end'
       },
       ease: 'power4.in',
-      delay: 1.2 // Pause at the middle
+      delay: 1.2 
     })
     .to('#welcome-intro', {
       opacity: 0,
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const distX = mouseX - outlineX;
     const distY = mouseY - outlineY;
 
-    // Smoother follow factor (reduced from 0.25 to 0.12 for more fluid motion)
+
     outlineX = outlineX + distX * 0.12;
     outlineY = outlineY + distY * 0.12;
 
@@ -105,18 +105,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // Pre-reveal setup
+  
   const revealElements = document.querySelectorAll('.education-card, .skill-card, .cert-card, .project-card, .experience-card, .home-img, .home-content h1, .home-content h3, .home-content p, .home-content .btn, .social-icons, .education-title, .skills-title, .certifications-title, .experience-title, .contact-section h1, .contact-info, .contact-form');
   revealElements.forEach(el => {
     gsap.set(el, { autoAlpha: 0, y: 30 });
   });
 
-  // Register ScrollTrigger
+  
   gsap.registerPlugin(ScrollTrigger);
 
-  // Scroll Animations Logic
+  
   const initScrollAnimations = () => {
-    // Generic Section Title Reveal
+  
     document.querySelectorAll('section h1, section h2, .education-title, .skills-title, .certifications-title, .experience-title').forEach(title => {
       gsap.to(title, {
         autoAlpha: 1,
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Home Section Animations (Wait for intro)
+    
     const homeElements = ['.home-content h1', '.home-content h3', '.home-content p', '.home-content .btn', '.social-icons'];
     gsap.to(homeElements, {
       autoAlpha: 1,
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       stagger: 0.15,
       duration: 1,
       ease: 'power4.out',
-      delay: 3.2 // Adjusted to ensure intro is fully gone
+      delay: 3.2 
     });
 
     gsap.to('.home-img', {
@@ -152,7 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
       delay: 3.5
     });
 
-    // Education Cards Stagger
     gsap.to('.education-card', {
       autoAlpha: 1,
       y: 0,
@@ -165,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Skill Cards Stagger
     gsap.to('.skill-card', {
       autoAlpha: 1,
       y: 0,
@@ -178,7 +176,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Project Cards Reveal
     gsap.to('.project-card', {
       autoAlpha: 1,
       y: 0,
@@ -191,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Certifications Cards Stagger
+    
     gsap.to('.cert-card', {
       autoAlpha: 1,
       y: 0,
@@ -204,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Experience Card Reveal
+    
     gsap.to('.experience-card', {
       autoAlpha: 1,
       y: 0,
@@ -216,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Contact Form & Info Reveal
+    
     gsap.to(['.contact-info', '.contact-form'], {
       autoAlpha: 1,
       y: 0,
@@ -229,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Parallax Effect for Background Canvas (Subtle)
+    
     gsap.to('#bg-canvas', {
       yPercent: 15,
       ease: 'none',
@@ -242,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // Run animations
+  
   initScrollAnimations();
 
   // Background Particles
@@ -251,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let particles = [];
   let trailParticles = [];
-  const particleCount = 150; // Increased count for full layout coverage
+  const particleCount = 150; 
 
   const resizeCanvas = () => {
     canvas.width = window.innerWidth;
@@ -269,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.speedX = Math.random() * 0.8 - 0.4;
       this.speedY = Math.random() * 0.8 - 0.4;
       this.isTrail = isTrail;
-      this.life = isTrail ? 80 : 1; // Frames for trail particles
+      this.life = isTrail ? 80 : 1; 
     }
 
     update() {

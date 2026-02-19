@@ -1,4 +1,4 @@
-/* Base Layout (Desktop) */
+
 .intro-text {
     display: flex;
     flex-wrap: wrap;
@@ -7,32 +7,31 @@
     gap: 0.5rem;
 }
 
-/* Space spans (desktop spacing between words) */
+
 .intro-text span:empty {
     width: 1.5rem;
 }
 
-/* ===== Mobile Break Layout ===== */
+
 @media (max-width: 768px) {
 
     .intro-text {
         gap: 0.5rem;
     }
 
-    /* Force line break after HRID and RAIAN */
+    
     .intro-text span:nth-child(5),
     .intro-text span:nth-child(11) {
         flex-basis: 100%;
         height: 0;
     }
 
-    /* Remove horizontal space width on mobile */
     .intro-text span:empty {
         width: 0;
     }
 }
 
-/* Smaller devices */
+
 @media (max-width: 480px) {
 
     .intro-text {
@@ -45,7 +44,7 @@
     }
 }
 
-/* Extra small devices */
+
 @media (max-width: 360px) {
 
     .intro-text {
