@@ -1398,3 +1398,41 @@ span {
     z-index: -1;
     pointer-events: none;
 }
+
+/* Welcome Intro Styles */
+#welcome-intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    /* Slightly transparent to show binary rain */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.intro-text {
+    display: flex;
+    gap: 2rem;
+}
+
+.intro-text span {
+    font-size: clamp(4.5rem, 18vw, 12rem);
+    font-weight: 200;
+    color: white;
+    letter-spacing: 0.1em;
+    display: inline-flex;
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(30px);
+}
+
+@media (max-width: 768px) {
+    .intro-text {
+        gap: 1rem;
+    }
+}

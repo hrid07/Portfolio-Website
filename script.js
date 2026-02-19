@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Welcome Intro Animation
+  const introTL = gsap.timeline({
+    onComplete: () => {
+      document.querySelector('#welcome-intro').style.display = 'none';
+    }
+  });
+
+  introTL
+    .to('.intro-text span', {
+      opacity: 1,
+      y: 0,
+      filter: 'blur(0px)',
+      duration: 1.2,
+      stagger: 0.15,
+      ease: 'power4.out'
+    })
+    .to('.intro-text span', {
+      opacity: 0,
+      y: -40,
+      filter: 'blur(10px)',
+      duration: 0.8,
+      stagger: {
+        each: 0.1,
+        from: 'end'
+      },
+      ease: 'power4.in',
+      delay: 1.2 // Pause at the middle
+    })
+    .to('#welcome-intro', {
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.inOut'
+    });
+
   // Mobile Menu Logic
   const menuIcon = document.querySelector('#menu-icon');
   const nav = document.querySelector('nav');
@@ -47,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const distX = mouseX - outlineX;
     const distY = mouseY - outlineY;
 
-    // Faster follow factor (from 0.15 to 0.25)
-    outlineX = outlineX + distX * 0.25;
-    outlineY = outlineY + distY * 0.25;
+    // Smoother follow factor (reduced from 0.25 to 0.12 for more fluid motion)
+    outlineX = outlineX + distX * 0.12;
+    outlineY = outlineY + distY * 0.12;
 
     cursorOutline.style.left = `${outlineX}px`;
     cursorOutline.style.top = `${outlineY}px`;
@@ -68,6 +102,8 @@ document.addEventListener('DOMContentLoaded', () => {
       cursorOutline.classList.remove('active');
     });
   });
+
+
 
   // Background Particles
   const canvas = document.getElementById('bg-canvas');
