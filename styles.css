@@ -1588,22 +1588,87 @@ span {
 
 .intro-text {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
+    padding: 0 2rem;
+    text-align: center;
 }
 
 .intro-text span {
-    font-size: clamp(4.5rem, 18vw, 12rem);
+    font-size: clamp(3rem, 15vw, 12rem);
     font-weight: 300;
     color: white;
     letter-spacing: 0.1em;
     display: inline-flex;
-    opacity: 5;
+    opacity: 0;
     filter: blur(15px);
     transform: translateY(30px);
+}
+
+.intro-text span:empty {
+    width: 2rem;
+}
+
+@media (max-width: 768px) {
+    .intro-text {
+        gap: 0.8rem;
+    }
+
+    .intro-text span:empty {
+        width: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .intro-text {
+        gap: 0.5rem;
+        padding: 0 1.5rem;
+    }
+
+    .intro-text span {
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
+        letter-spacing: 0.02em;
+    }
+
+    .intro-text span:empty {
+        width: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .intro-text {
+        gap: 0.3rem;
+        padding: 0 1rem;
+    }
+
+    .intro-text span {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+    }
+
+    .intro-text span:empty {
+        width: 0.8rem;
+    }
+}
+
+.intro-text span {
+    font-size: clamp(3rem, 15vw, 12rem);
+    font-weight: 300;
+    color: white;
+    letter-spacing: 0.1em;
+    display: inline-flex;
+    opacity: 0;
+    filter: blur(15px);
+    transform: translateY(30px);
+}
+
+.intro-text span:empty {
+    width: 2rem;
 }
 
 @media (max-width: 768px) {
     .intro-text {
         gap: 1rem;
+
     }
 }

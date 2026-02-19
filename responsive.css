@@ -1,0 +1,58 @@
+/* Base Layout (Desktop) */
+.intro-text {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Space spans (desktop spacing between words) */
+.intro-text span:empty {
+    width: 1.5rem;
+}
+
+/* ===== Mobile Break Layout ===== */
+@media (max-width: 768px) {
+
+    .intro-text {
+        gap: 0.5rem;
+    }
+
+    /* Force line break after HRID and RAIAN */
+    .intro-text span:nth-child(5),
+    .intro-text span:nth-child(11) {
+        flex-basis: 100%;
+        height: 0;
+    }
+
+    /* Remove horizontal space width on mobile */
+    .intro-text span:empty {
+        width: 0;
+    }
+}
+
+/* Smaller devices */
+@media (max-width: 480px) {
+
+    .intro-text {
+        padding: 0 1.5rem;
+    }
+
+    .intro-text span {
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
+        letter-spacing: 0.02em;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+
+    .intro-text {
+        padding: 0 1rem;
+    }
+
+    .intro-text span {
+        font-size: clamp(2rem, 10vw, 3.5rem);
+    }
+}
