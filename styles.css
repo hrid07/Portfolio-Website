@@ -298,28 +298,51 @@ span {
 @keyframes words {
 
     0%,
-    20% {
+    10% {
         content: "Student";
     }
 
-    21%,
-    40% {
-        content: "Software Developer";
+    11%,
+    20% {
+        content: "Tech Enthusiast";
     }
 
-    41%,
-    60% {
+    21%,
+    30% {
         content: "Web Developer";
     }
 
-    61%,
-    80% {
+    31%,
+    40% {
         content: "Frontend Developer";
     }
 
-    81%,
-    100% {
+    41%,
+    50% {
         content: "Web Designer";
+    }
+
+    51%,
+    60% {
+        content: "Programmer";
+    }
+
+    61%,
+    70% {
+        content: "Student";
+    }
+
+    71%,
+    80% {
+        content: "Tech Enthusiast";
+    }
+    81%,
+    90% {
+        content: "Web Developer";
+}
+    91%,
+    100% {
+        content: "Frontend Developer";
     }
 }
 
