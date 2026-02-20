@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         from: 'end'
       },
       ease: 'power4.in',
-      delay: 1.2 
+      delay: 1.2
     })
     .to('#welcome-intro', {
       opacity: 0,
@@ -105,18 +105,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  
+
   const revealElements = document.querySelectorAll('.education-card, .skill-card, .cert-card, .project-card, .experience-card, .home-img, .home-content h1, .home-content h3, .home-content p, .home-content .btn, .social-icons, .education-title, .skills-title, .certifications-title, .experience-title, .contact-section h1, .contact-info, .contact-form');
   revealElements.forEach(el => {
     gsap.set(el, { autoAlpha: 0, y: 30 });
   });
 
-  
+
   gsap.registerPlugin(ScrollTrigger);
 
-  
+
   const initScrollAnimations = () => {
-  
+
     document.querySelectorAll('section h1, section h2, .education-title, .skills-title, .certifications-title, .experience-title').forEach(title => {
       gsap.to(title, {
         autoAlpha: 1,
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    
+
     const homeElements = ['.home-content h1', '.home-content h3', '.home-content p', '.home-content .btn', '.social-icons'];
     gsap.to(homeElements, {
       autoAlpha: 1,
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
       stagger: 0.15,
       duration: 1,
       ease: 'power4.out',
-      delay: 3.2 
+      delay: 3.2
     });
 
     gsap.to('.home-img', {
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    
+
     gsap.to('.cert-card', {
       autoAlpha: 1,
       y: 0,
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    
+
     gsap.to('.experience-card', {
       autoAlpha: 1,
       y: 0,
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    
+
     gsap.to(['.contact-info', '.contact-form'], {
       autoAlpha: 1,
       y: 0,
@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    
+
     gsap.to('#bg-canvas', {
       yPercent: 15,
       ease: 'none',
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  
+
   initScrollAnimations();
 
   // Background Particles
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let particles = [];
   let trailParticles = [];
-  const particleCount = 150; 
+  const particleCount = 150;
 
   const resizeCanvas = () => {
     canvas.width = window.innerWidth;
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
       this.speedX = Math.random() * 0.8 - 0.4;
       this.speedY = Math.random() * 0.8 - 0.4;
       this.isTrail = isTrail;
-      this.life = isTrail ? 80 : 1; 
+      this.life = isTrail ? 80 : 1;
     }
 
     update() {
@@ -356,3 +356,26 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticles();
   animate();
 });
+
+// --- Easter Egg: Ask Hrid ---
+window.hrid = function () {
+  const asciiArt = `
+ ██╗  ██╗██████╗ ██╗██████╗ 
+ ██║  ██║██╔══██╗██║██╔══██╗
+ ███████║██████╔╝██║██║  ██║
+ ██╔══██║██╔══██╗██║██║  ██║
+ ██║  ██║██║  ██║██║██████╔╝
+ ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═════╝ 
+    `;
+
+  const styleHeader = "color: #94A378; font-weight: bold; font-size: 16px; font-family: monospace;";
+  const styleTagline = "color: #ededed; font-style: italic; font-size: 12px; font-family: sans-serif;";
+  const styleLink = "color: #94A378; text-decoration: underline; font-family: monospace;";
+
+  console.log(`%c${asciiArt}`, "color: #94A378; font-weight: bold;");
+  console.log("%c⚡ Engineer Mode Activated", styleHeader);
+  console.log("%c\"Building. Learning. Shipping.\"", styleTagline);
+  console.log("%c🔗 GitHub: https://github.com/hrid07", styleLink);
+
+  return "Status: Operational";
+};

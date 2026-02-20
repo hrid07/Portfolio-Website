@@ -1,0 +1,254 @@
+{
+    "identity": {
+        "name": "Hrid Raian Khan",
+        "role": "Front-End Developer & Computer Engineering Student",
+        "location": "Dhaka, Bangladesh",
+        "about": "Hrid is a passionate Front-End Developer and Computer Engineering student at AIUB. He focuses on building clean, interactive, and functional digital experiences."
+    },
+    "education": [
+        {
+            "degree": "Bachelor of Science in Computer Science and Engineering",
+            "institution": "American International University-Bangladesh (AIUB)",
+            "year": "2024 - Present",
+            "details": "Focused on software development, data structures, algorithms, and hardware integration."
+        },
+        {
+            "degree": "Higher Secondary Certificate (HSC)",
+            "institution": "Dhaka Commerce College",
+            "year": "2023",
+            "result": "GPA 5.00",
+            "details": "Studied Science with a focus on Physics, Mathematics, and Computer Science."
+        },
+        {
+            "degree": "Secondary School Certificate (SSC)",
+            "institution": "Monipur High School and College",
+            "year": "2021",
+            "result": "GPA 4.83",
+            "details": "Completed SSC in Science stream with distinction."
+        }
+    ],
+    "skills": [
+        {
+            "category": "Programming",
+            "name": "Java",
+            "details": "Proficient in Object-Oriented Programming and GUI Development."
+        },
+        {
+            "category": "Programming",
+            "name": "C / C++",
+            "details": "Strong foundation in Data Structures, Algorithms, and Problem Solving."
+        },
+        {
+            "category": "Web Development",
+            "name": "Frontend",
+            "details": "Expertise in HTML5, CSS3, and JavaScript (Vanilla & Animations)."
+        },
+        {
+            "category": "Database",
+            "name": "SQL",
+            "details": "Understanding of DBMS concepts and basic SQL queries."
+        },
+        {
+            "category": "Tools",
+            "name": "Development Tools",
+            "details": "Experienced with Git, GitHub, VS Code, and CodeBlocks."
+        }
+    ],
+    "certifications": [
+        {
+            "name": "Basics of Python",
+            "issuer": "UniAthena"
+        },
+        {
+            "name": "Online Safety",
+            "issuer": "GP Academy"
+        },
+        {
+            "name": "Cyber Security Career Launchpad",
+            "issuer": "Ostad"
+        },
+        {
+            "name": "IT Essentials",
+            "issuer": "Cisco Networking Academy"
+        },
+        {
+            "name": "Critical Infrastructure Protection",
+            "issuer": "OPSWAT"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Car Rental System",
+            "tech": [
+                "Java",
+                "GUI",
+                "OOP"
+            ],
+            "details": "A desktop application built using Java Swing for managing car rentals."
+        },
+        {
+            "name": "Flappy Bird",
+            "tech": [
+                "Java",
+                "GUI",
+                "OOP"
+            ],
+            "details": "A clone of the popular mobile game implemented in Java to demonstrate game logic."
+        },
+        {
+            "name": "Portfolio-Home",
+            "tech": [
+                "HTML5",
+                "CSS3"
+            ],
+            "details": "An interactive and responsive personal portfolio website."
+        }
+    ],
+    "experience": [
+        {
+            "role": "Campus Ambassador",
+            "company": "Global Pathway Experts Limited",
+            "year": "2024-2025",
+            "details": "Assisted students with overseas education opportunities and resources."
+        }
+    ],
+    "contact": {
+        "email": "raiankhanhrid07@gmail.com",
+        "phone": "+880 1886184059",
+        "linkedin": "Hrid Raian Khan"
+    },
+    "intents": [
+        {
+            "keywords": [
+                "hi",
+                "hello",
+                "hey",
+                "sup",
+                "greet",
+                "morning",
+                "evening"
+            ],
+            "response": "Hello! I'm Hrid's AI assistant. How can I help you today? You can ask about my skills, projects, or education."
+        },
+        {
+            "keywords": [
+                "skill",
+                "language",
+                "coding",
+                "tech",
+                "java",
+                "cpp",
+                "javascript",
+                "html",
+                "css",
+                "python",
+                "sql",
+                "git",
+                "web",
+                "programming"
+            ],
+            "response": "Hrid is proficient in Java (GUI/OOP), C/C++, Web Development (HTML/CSS/JS), and SQL. He uses tools like Git and VS Code. Which area would you like to know more about?"
+        },
+        {
+            "keywords": [
+                "education",
+                "study",
+                "college",
+                "university",
+                "aiub",
+                "school",
+                "background",
+                "degree",
+                "hsc",
+                "ssc",
+                "gpa",
+                "result"
+            ],
+            "response": "Hrid is a CSE student at AIUB (2024-Present). He achieved GPA 5.00 in HSC (Dhaka Commerce College) and GPA 4.83 in SSC (Monipur High School)."
+        },
+        {
+            "keywords": [
+                "project",
+                "work",
+                "build",
+                "create",
+                "github",
+                "car",
+                "rental",
+                "flappy",
+                "bird",
+                "game"
+            ],
+            "response": "Hrid has built a Car Rental System, a Flappy Bird game, and this very portfolio! You can find his code on GitHub at hrid07."
+        },
+        {
+            "keywords": [
+                "cert",
+                "course",
+                "python",
+                "safety",
+                "cyber",
+                "it",
+                "essentials",
+                "opswat",
+                "cisco"
+            ],
+            "response": "Hrid holds certifications in Python (UniAthena), IT Essentials (Cisco), Cyber Security (Ostad), and Online Safety (GP Academy)."
+        },
+        {
+            "keywords": [
+                "experience",
+                "job",
+                "ambassador",
+                "career",
+                "history",
+                "global",
+                "pathway"
+            ],
+            "response": "Hrid was a Campus Ambassador for Global Pathway Experts Limited (2024-2025), where he guided students on international education."
+        },
+        {
+            "keywords": [
+                "contact",
+                "email",
+                "phone",
+                "linkedin",
+                "reach",
+                "message",
+                "call",
+                "address",
+                "fb",
+                "facebook"
+            ],
+            "response": "You can reach Hrid at raiankhanhrid07@gmail.com or +880 1886184059. He's also active on LinkedIn and Facebook!"
+        },
+        {
+            "keywords": [
+                "about",
+                "who is",
+                "who are",
+                "summary",
+                "profile",
+                "hrid"
+            ],
+            "response": "Hrid Raian Khan is a Front-End Developer and CSE student dedicated to creating clean, interactive digital experiences."
+        }
+    ],
+    "synonyms": {
+        "university": "aiub",
+        "college": "education",
+        "coding": "skill",
+        "tech": "skill",
+        "software": "skill",
+        "built": "project",
+        "made": "project",
+        "created": "project",
+        "reach": "contact",
+        "mail": "email",
+        "c++": "cpp",
+        "certification": "cert",
+        "diploma": "education",
+        "gpa": "education",
+        "phone": "contact"
+    }
+}
