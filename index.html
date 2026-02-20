@@ -166,169 +166,213 @@
         </div>
 
         <div class="projects-container">
-            <a href="https://github.com/hrid07/CarRentalSystem" class="project-card">
-                <img src="image/project1.png" alt="Project 1">
+            <div class="project-card" data-video="video/project1.mp4">
+                <div class="card-media">
+                    <img src="image/project1.png" alt="Project 1">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                        <span>Play Demo</span>
+                    </div>
+                </div>
                 <h3>Car Rental System</h3>
                 <div class="project-tech-stack">
                     <span>Java</span>
                     <span>GUI</span>
                     <span>OOP</span>
                 </div>
-            </a>
+                <div class="card-links">
+                    <a href="https://github.com/hrid07/CarRentalSystem" target="_blank" class="github-link"><i
+                            class="fab fa-github"></i> Source</a>
+                </div>
+            </div>
 
-            <a href="https://github.com/hrid07/FlappyBird" class="project-card">
-                <img src="image/project2.png" alt="Project 2">
+            <div class="project-card" data-video="video/project2.mp4">
+                <div class="card-media">
+                    <img src="image/project2.png" alt="Project 2">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                        <span>Play Demo</span>
+                    </div>
+                </div>
                 <h3>Flappy Bird</h3>
                 <div class="project-tech-stack">
                     <span>Java</span>
                     <span>GUI</span>
                     <span>OOP</span>
                 </div>
-            </a>
+                <div class="card-links">
+                    <a href="https://github.com/hrid07/FlappyBird" target="_blank" class="github-link"><i
+                            class="fab fa-github"></i> Source</a>
+                </div>
+            </div>
 
-            <a href="https://hrid07.github.io/Portfolio/" class="project-card">
-                <img src="image/project3.png" alt="Project 3">
+            <div class="project-card" data-video="video/project3.mp4">
+                <div class="card-media">
+                    <img src="image/project3.png" alt="Project 3">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                        <span>Play Demo</span>
+                    </div>
+                </div>
                 <h3>Portfolio-Home</h3>
                 <div class="project-tech-stack">
                     <span>HTML5</span>
                     <span>CSS3</span>
                 </div>
-            </a>
+                <div class="card-links">
+                    <a href="https://hrid07.github.io/Portfolio/" target="_blank" class="github-link"><i
+                            class="fas fa-external-link-alt"></i> Live Demo</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Visualizer Section -->
     <section id="visualizer" class="visualizer-section">
-        <h1 class="visualizer-title">Data Structure Visualizer</h1>
-        <div class="visualizer-tabs">
-            <button class="tab-btn active" onclick="showVisualizer('sorting', event)">Sorting</button>
-            <button class="tab-btn" onclick="showVisualizer('binary-search', event)">Binary Search</button>
+        <div class="viz-dropdown-header" id="viz-toggle">
+            <h1 class="visualizer-title">Data Structure Visualizer</h1>
+            <i class="fas fa-chevron-down"></i>
         </div>
+        <div class="viz-collapsible-wrapper">
+            <div class="visualizer-tabs">
+                <button class="tab-btn active" onclick="showVisualizer('sorting', event)">Sorting</button>
+                <button class="tab-btn" onclick="showVisualizer('binary-search', event)">Binary Search</button>
+            </div>
 
-        <div class="visualizer-container">
-            <!-- Sorting Visualizer -->
-            <div id="sorting-viz" class="viz-content active">
-                <div class="viz-controls">
-                    <div class="control-group">
-                        <label>Size:</label>
-                        <input type="range" id="sort-size" min="5" max="50" value="20" oninput="generateSortArray()">
+            <div class="visualizer-container">
+                <!-- Sorting Visualizer -->
+                <div id="sorting-viz" class="viz-content active">
+                    <div class="viz-controls">
+                        <div class="control-group">
+                            <label>Size:</label>
+                            <input type="range" id="sort-size" min="5" max="50" value="20"
+                                oninput="generateSortArray()">
+                        </div>
+                        <div class="control-group">
+                            <label>Speed:</label>
+                            <input type="range" id="sort-speed" min="1" max="100" value="50">
+                        </div>
+                        <button class="btn" onclick="generateSortArray()">Randomize</button>
+                        <button class="btn" onclick="startBubbleSort()">Bubble</button>
+                        <button class="btn" onclick="startSelectionSort()">Selection</button>
+                        <button class="btn" onclick="startInsertionSort()">Insertion</button>
+                        <button class="btn" onclick="startMergeSort()">Merge</button>
                     </div>
-                    <div class="control-group">
-                        <label>Speed:</label>
-                        <input type="range" id="sort-speed" min="1" max="100" value="50">
+                    <div id="sorting-display" class="viz-display sorting-bars"></div>
+                </div>
+
+                <!-- Binary Search Visualizer -->
+                <div id="binary-search-viz" class="viz-content">
+                    <div class="viz-controls">
+                        <input type="number" id="bs-input" placeholder="Search Value">
+                        <button class="btn" onclick="startBinarySearch()">Search</button>
+                        <button class="btn" onclick="generateBSArray()">New Array</button>
                     </div>
-                    <button class="btn" onclick="generateSortArray()">Randomize</button>
-                    <button class="btn" onclick="startBubbleSort()">Bubble</button>
-                    <button class="btn" onclick="startSelectionSort()">Selection</button>
-                    <button class="btn" onclick="startInsertionSort()">Insertion</button>
-                    <button class="btn" onclick="startMergeSort()">Merge</button>
+                    <div id="bs-display" class="viz-display search-nodes"></div>
                 </div>
-                <div id="sorting-display" class="viz-display sorting-bars"></div>
-            </div>
-
-            <!-- Binary Search Visualizer -->
-            <div id="binary-search-viz" class="viz-content">
-                <div class="viz-controls">
-                    <input type="number" id="bs-input" placeholder="Search Value">
-                    <button class="btn" onclick="startBinarySearch()">Search</button>
-                    <button class="btn" onclick="generateBSArray()">New Array</button>
-                </div>
-                <div id="bs-display" class="viz-display search-nodes"></div>
-            </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- Experience Section -->
-        <section id="experience" class="experience-section">
-            <h1 class="experience-title">Experience</h1>
-
-            <div class="experience-container">
-
-                <div class="experience-card">
-                    <h3>Campus Ambassador</h3>
-                    <p class="exp-company">Global Pathway Experts Limited</p>
-                    <p class="exp-year">2024-2025</p>
-                    <p class="exp-desc">
-                        Represented Global Pathway Experts Limited on campus, assisting students with overseas education
-                        opportunities, connecting students with international study programs and resources.
-
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact-section">
-            <h1>Get In Touch</h1>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p><i class="fas fa-envelope"></i> Email: <a
-                            href="mailto:raiankhanhrid07@gmail.com">raiankhanhrid07@gmail.com</a></p>
-                    <p><i class="fas fa-phone-alt"></i> Phone: +880 1886184059</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Address: Dhaka, Bangladesh</p>
-
-                    <div class="contact-socials">
-                        <a href="https://www.facebook.com/hridraian.khan.07"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://github.com/hrid07"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/hrid-raian-khan-81b828310/"><i
-                                class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="contact-form">
-                    <input type="text" placeholder="Your Name">
-                    <input type="email" placeholder="Your Email">
-                    <textarea placeholder="Your Message"></textarea>
-                    <button type="submit">Send Message</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Ask Hrid AI Chatbot -->
-        <div id="chatbot-widget">
-            <div id="chatbot-header">
-                <span>Ask Hrid AI</span>
-                <button id="close-chat" onclick="toggleChat()"><i class="fas fa-times"></i></button>
-            </div>
-            <div id="chatbot-messages">
-                <div class="message bot-message">Hi! I'm Hrid's AI assistant. Ask me anything about his skills,
-                    projects, or
-                    education!</div>
-            </div>
-            <div id="chatbot-suggestions">
-                <span onclick="askSuggestion('Skills')">Skills</span>
-                <span onclick="askSuggestion('Projects')">Projects</span>
-                <span onclick="askSuggestion('Education')">Education</span>
-                <span onclick="askSuggestion('Contact')">Contact</span>
-            </div>
-            <div id="chatbot-input-area">
-                <input type="text" id="chatbot-input" placeholder="Type a message..." onkeypress="handleChatKey(event)">
-                <button id="send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
             </div>
         </div>
-        <button id="chatbot-trigger" onclick="toggleChat()">
-            <i class="fas fa-robot"></i>
-        </button>
+    </section>
 
-        <canvas id="bg-canvas"></canvas>
-        <div class="cursor-dot"></div>
-        <div class="cursor-outline"></div>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <h1 class="experience-title">Experience</h1>
 
-        <script src="script.js"></script>
-        <script src="visualizer.js"></script>
-        <script src="chatbot.js"></script>
-        <script src="binary-bg.js"></script>
+        <div class="experience-container">
+
+            <div class="experience-card">
+                <h3>Campus Ambassador</h3>
+                <p class="exp-company">Global Pathway Experts Limited</p>
+                            <p class="exp-year">2024-2025</p>
+                            <p class="exp-desc">
+                                Represented Global Pathway Experts Limited on campus, assisting students with overseas
+                                education
+                                opportunities, connecting students with international study programs and resources.
+
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="contact-section">
+                    <h1>Get In Touch</h1>
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> Email: <a
+                                    href="mailto:raiankhanhrid07@gmail.com">raiankhanhrid07@gmail.com</a></p>
+                            <p><i class="fas fa-phone-alt"></i> Phone: +880 1886184059</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Address: Dhaka, Bangladesh</p>
+
+                            <div class="contact-socials">
+                                <a href="https://www.facebook.com/hridraian.khan.07"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="https://github.com/hrid07"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/hrid-raian-khan-81b828310/"><i
+                                        class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="contact-form">
+                            <input type="text" placeholder="Your Name">
+                            <input type="email" placeholder="Your Email">
+                            <textarea placeholder="Your Message"></textarea>
+                            <button type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Ask Hrid AI Chatbot -->
+                <div id="chatbot-widget">
+                    <div id="chatbot-header">
+                        <span>Ask Hrid AI</span>
+                        <button id="close-chat" onclick="toggleChat()"><i class="fas fa-times"></i></button>
+                    </div>
+                    <div id="chatbot-messages">
+                        <div class="message bot-message">Hi! I'm Hrid's AI assistant. Ask me anything about his skills,
+                            projects, or
+                            education!</div>
+                    </div>
+                    <div id="chatbot-suggestions">
+                        <span onclick="askSuggestion('Skills')">Skills</span>
+                        <span onclick="askSuggestion('Projects')">Projects</span>
+                        <span onclick="askSuggestion('Education')">Education</span>
+                        <span onclick="askSuggestion('Contact')">Contact</span>
+                    </div>
+                    <div id="chatbot-input-area">
+                        <input type="text" id="chatbot-input" placeholder="Type a message..."
+                            onkeypress="handleChatKey(event)">
+                        <button id="send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                <button id="chatbot-trigger" onclick="toggleChat()">
+                    <i class="fas fa-robot"></i>
+                </button>
+
+                <div id="project-modal" class="modal">
+                    <div class="modal-backdrop"></div>
+                    <div class="modal-content">
+                        <button class="close-modal"><i class="fas fa-times"></i></button>
+                        <div class="video-container">
+                            <video id="project-video" controls>
+                                <source src="" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="cert-overlay">
+                    <img src="" alt="Full Certificate">
+                </div>
+                <canvas id="bg-canvas"></canvas>
+                <div class="cursor-dot"></div>
+                <div class="cursor-outline"></div>
+
+                <script src="script.js"></script>
+                <script src="visualizer.js"></script>
+                <script src="chatbot.js"></script>
+                <script src="binary-bg.js"></script>
 
 </body>
 

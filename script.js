@@ -103,6 +103,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Project Modal Logic
+  const modal = document.querySelector('#project-modal');
+  const modalVideo = document.querySelector('#project-video');
+  const closeBtn = document.querySelector('.close-modal');
+  const cards = document.querySelectorAll('.project-card');
+
+  const openModal = (videoSrc) => {
+    modalVideo.src = videoSrc;
+    modal.classList.add('active');
+    document.body.classList.add('modal-open');
+    modalVideo.play();
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    modalVideo.pause();
+    modalVideo.src = "";
+  };
+
+  cards.forEach(card => {
+    const playBtn = card.querySelector('.play-overlay');
+    if (playBtn) {
+      playBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const videoSrc = card.getAttribute('data-video');
+        if (videoSrc) openModal(videoSrc);
+      });
+    }
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  modal.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+
+  // Certificate Overlay Logic
+  const certOverlay = document.querySelector('#cert-overlay');
+  const certOverlayImg = certOverlay.querySelector('img');
+  const certCards = document.querySelectorAll('.cert-card');
+
+  certCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const img = card.querySelector('.cert-image');
+      if (img) {
+        certOverlayImg.src = img.src;
+        certOverlay.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    });
+  });
+
+  certOverlay.addEventListener('click', () => {
+    certOverlay.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
+    }
+  });
+
 
 
 
