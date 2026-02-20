@@ -1,6 +1,4 @@
-// ========================
-// Chatbot.js - Safe Version
-// ========================
+
 
 // Default Fallback Knowledge
 const fallbackKnowledge = {
@@ -10,14 +8,14 @@ const fallbackKnowledge = {
         "about": "Hrid is a passionate Front-End Developer and Computer Engineering student at AIUB."
     },
     "intents": [
-        { "keywords": ["hi","hello","hey"], "response": "Hello! I'm Hrid's AI assistant. Ask me about his skills, projects, or education!" },
-        { "keywords": ["skill","java","cpp","javascript","html","css","sql"], "response": "Hrid is proficient in Java, C/C++, Web Development, and SQL." },
-        { "keywords": ["education","study","aiub","college"], "response": "Hrid is a CSE student at AIUB, with excellent HSC and SSC results." },
-        { "keywords": ["project","work","car","flappy"], "response": "Hrid built a Car Rental System, Flappy Bird game, and his portfolio!" },
-        { "keywords": ["contact","email","phone"], "response": "Reach Hrid at raiankhanhrid07@gmail.com or +880 1886184059." }
+        { "keywords": ["hi", "hello", "hey"], "response": "Hello! I'm Hrid's AI assistant. Ask me about his skills, projects, or education!" },
+        { "keywords": ["skill", "java", "cpp", "javascript", "html", "css", "sql"], "response": "Hrid is proficient in Java, C/C++, Web Development, and SQL." },
+        { "keywords": ["education", "study", "aiub", "college"], "response": "Hrid is a CSE student at AIUB, with excellent HSC and SSC results." },
+        { "keywords": ["project", "work", "car", "flappy"], "response": "Hrid built a Car Rental System, Flappy Bird game, and his portfolio!" },
+        { "keywords": ["contact", "email", "phone"], "response": "Reach Hrid at raiankhanhrid07@gmail.com or +880 1886184059." }
     ],
     "synonyms": {
-        "university":"aiub","college":"education","coding":"skill","c++":"cpp","mail":"email"
+        "university": "aiub", "college": "education", "coding": "skill", "c++": "cpp", "mail": "email"
     }
 };
 
@@ -39,36 +37,55 @@ async function initChatbot() {
     }
 }
 
-// Wait until DOM is loaded and chatbot is ready
-window.addEventListener('DOMContentLoaded', async () => {
-    await initChatbot();
+// Initialize Chatbot logic and UI listeners once DOM is ready
+window.addEventListener('DOMContentLoaded', () => {
+    // Start knowledge base initialization (don't block listeners)
+    initChatbot();
 
-    // Toggle button
-    const toggleBtn = document.getElementById('chatbot-toggle');
-    if (toggleBtn) toggleBtn.addEventListener('click', toggleChat);
-
-    // Input enter key
+    // UI Elements
+    const triggerBtn = document.getElementById('chatbot-trigger');
+    const closeBtn = document.getElementById('close-chat');
+    const sendBtn = document.getElementById('send-btn');
     const input = document.getElementById('chatbot-input');
-    if (input) input.addEventListener('keydown', handleChatKey);
+    const suggestionSpans = document.querySelectorAll('#chatbot-suggestions span');
 
-    console.log("Chatbot ready!");
+    // Event Listeners
+    if (triggerBtn) triggerBtn.addEventListener('click', toggleChat);
+    if (closeBtn) closeBtn.addEventListener('click', toggleChat);
+    if (sendBtn) sendBtn.addEventListener('click', () => sendChatMessage());
+    if (input) {
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') sendChatMessage();
+        });
+    }
+
+    suggestionSpans.forEach(span => {
+        span.addEventListener('click', () => {
+            const suggestion = span.getAttribute('data-suggestion');
+            askSuggestion(suggestion);
+        });
+    });
+
+    console.log("Chatbot ready and listeners attached!");
 });
 
-// --------------------
-// Chatbot UI Functions
-// --------------------
+
 function toggleChat() {
     const chat = document.getElementById('chatbot-widget');
     if (!chat) return;
-    chat.style.display = chat.style.display === 'flex' ? 'none' : 'flex';
-    if (chat.style.display === 'flex') document.getElementById('chatbot-input').focus();
+
+    // Check current display state more reliably
+    const isVisible = window.getComputedStyle(chat).display !== 'none';
+    chat.style.display = isVisible ? 'none' : 'flex';
+
+    if (chat.style.display === 'flex') {
+        const input = document.getElementById('chatbot-input');
+        if (input) input.focus();
+    }
 }
 
-function handleChatKey(event) {
-    if (event.key === 'Enter') sendChatMessage();
-}
 
-async function sendChatMessage(presetText=null) {
+async function sendChatMessage(presetText = null) {
     const input = document.getElementById('chatbot-input');
     const text = presetText || input.value.trim();
     if (!text) return;
@@ -114,60 +131,66 @@ function removeTyping(id) {
 // Chatbot Logic
 // --------------------
 function getResponse(input) {
-    const query = input.toLowerCase().replace(/[?.,!]/g,'');
+    if (!hridKnowledge || !hridKnowledge.intents) {
+        return "I'm still learning. Please try again in a moment!";
+    }
+
+    const query = input.toLowerCase().replace(/[?.,!]/g, '');
     const tokens = query.split(/\s+/);
 
-    let bestIntent = null;
-    let highestScore = 0;
+    const matches = [];
 
     hridKnowledge.intents.forEach(intent => {
         let score = 0;
-        intent.keywords.forEach(keyword => {
-            if (tokens.includes(keyword)) score += 3;
-            else if (query.includes(keyword)) score += 1;
-        });
 
-        tokens.forEach(token => {
-            if (hridKnowledge.synonyms[token]) {
-                const mapped = hridKnowledge.synonyms[token];
-                if (intent.keywords.includes(mapped)) score += 2;
+        // 1. Keyword matching (tokens and substring)
+        intent.keywords.forEach(keyword => {
+            if (tokens.includes(keyword)) {
+                score += 3; // Direct token match
+            } else if (query.includes(keyword)) {
+                score += 1.5; // Substring match
             }
         });
 
-        if (score > highestScore) {
-            highestScore = score;
-            bestIntent = intent;
+        // 2. Synonym matching
+        tokens.forEach(token => {
+            if (hridKnowledge.synonyms && hridKnowledge.synonyms[token]) {
+                const mapped = hridKnowledge.synonyms[token];
+                if (intent.keywords.includes(mapped)) {
+                    score += 2.5;
+                }
+            }
+        });
+
+        // If score is significant, add to matches
+        if (score >= 2.5) {
+            matches.push({ intent, score });
         }
     });
 
-    if (bestIntent && highestScore > 0.5) return bestIntent.response;
+    // Sort matches by score descending
+    matches.sort((a, b) => b.score - a.score);
 
+    // If matches found, combine unique responses
+    if (matches.length > 0) {
+        // Use a Set to avoid duplicate responses if keywords overlap
+        const responses = [...new Set(matches.map(m => m.intent.response))];
+
+        // If there's a greeting, it usually should come first
+        const greetingIndex = matches.findIndex(m => m.intent.keywords.includes('hi') || m.intent.keywords.includes('hello'));
+        if (greetingIndex > 0) {
+            const greeting = responses.splice(greetingIndex, 1)[0];
+            responses.unshift(greeting);
+        }
+
+        return responses.join(' ');
+    }
+
+    // Fallback if no strong matches
     return "I'm not sure about that. You can ask about skills, projects, or education, or contact Hrid.";
 }
 
-// --------------------
-// Utility
-// --------------------
-function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
+function askSuggestion(text) {
+    sendChatMessage(text);
 }
-window.addEventListener('DOMContentLoaded', async () => {
-    await initChatbot();
 
-    // Toggle chatbot open/close
-    document.getElementById('chatbot-trigger').addEventListener('click', toggleChat);
-    document.getElementById('close-chat').addEventListener('click', toggleChat);
-
-    // Send message on enter
-    const input = document.getElementById('chatbot-input');
-    input.addEventListener('keypress', handleChatKey);
-
-    // Send button
-    document.getElementById('send-btn').addEventListener('click', sendChatMessage);
-
-    // Suggestion buttons
-    const suggestions = document.querySelectorAll('#chatbot-suggestions span');
-    suggestions.forEach(span => {
-        span.addEventListener('click', () => askSuggestion(span.dataset.suggestion));
-    });
-});

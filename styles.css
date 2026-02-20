@@ -20,12 +20,16 @@
 
 a,
 button,
-.menu-icon,
 .social-icons a,
 .project-card,
 .skill-card,
 .cert-card,
 .experience-card {
+    cursor: none;
+}
+
+.menu-icon {
+    display: none;
     cursor: none;
 }
 
@@ -168,7 +172,7 @@ section {
     padding-top: 12rem;
     margin-left: 5rem;
     scroll-margin-top: 0;
-    
+
 }
 
 .home.home-content h1 {
