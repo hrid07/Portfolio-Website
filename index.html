@@ -301,13 +301,7 @@
                             <p><i class="fas fa-phone-alt"></i> Phone: +880 1886184059</p>
                             <p><i class="fas fa-map-marker-alt"></i> Address: Dhaka, Bangladesh</p>
 
-                            <div class="contact-socials">
-                                <a href="https://www.facebook.com/hridraian.khan.07"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a href="https://github.com/hrid07"><i class="fab fa-github"></i></a>
-                                <a href="https://www.linkedin.com/in/hrid-raian-khan-81b828310/"><i
-                                        class="fab fa-linkedin-in"></i></a>
-                            </div>
+                           
                         </div>
 
                         <div class="contact-form">
@@ -320,31 +314,30 @@
                 </section>
 
                 <!-- Ask Hrid AI Chatbot -->
-                <div id="chatbot-widget">
-                    <div id="chatbot-header">
-                        <span>Ask Hrid AI</span>
-                        <button id="close-chat" onclick="toggleChat()"><i class="fas fa-times"></i></button>
-                    </div>
-                    <div id="chatbot-messages">
-                        <div class="message bot-message">Hi! I'm Hrid's AI assistant. Ask me anything about his skills,
-                            projects, or
-                            education!</div>
-                    </div>
-                    <div id="chatbot-suggestions">
-                        <span onclick="askSuggestion('Skills')">Skills</span>
-                        <span onclick="askSuggestion('Projects')">Projects</span>
-                        <span onclick="askSuggestion('Education')">Education</span>
-                        <span onclick="askSuggestion('Contact')">Contact</span>
-                    </div>
-                    <div id="chatbot-input-area">
-                        <input type="text" id="chatbot-input" placeholder="Type a message..."
-                            onkeypress="handleChatKey(event)">
-                        <button id="send-btn" onclick="sendChatMessage()"><i class="fas fa-paper-plane"></i></button>
-                    </div>
-                </div>
-                <button id="chatbot-trigger" onclick="toggleChat()">
-                    <i class="fas fa-robot"></i>
-                </button>
+<div id="chatbot-widget">
+    <div id="chatbot-header">
+        <span>Ask Hrid AI</span>
+        <button id="close-chat"><i class="fas fa-times"></i></button>
+    </div>
+    <div id="chatbot-messages">
+        <div class="message bot-message">Hi! I'm Hrid's AI assistant. Ask me anything about his skills,
+            projects, or education!</div>
+    </div>
+    <div id="chatbot-suggestions">
+        <span data-suggestion="Skills">Skills</span>
+        <span data-suggestion="Projects">Projects</span>
+        <span data-suggestion="Education">Education</span>
+        <span data-suggestion="Contact">Contact</span>
+    </div>
+    <div id="chatbot-input-area">
+        <input type="text" id="chatbot-input" placeholder="Type a message...">
+        <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+    </div>
+</div>
+
+<button id="chatbot-trigger">
+    <i class="fas fa-robot"></i>
+</button>
 
                 <div id="project-modal" class="modal">
                     <div class="modal-backdrop"></div>
