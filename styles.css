@@ -168,7 +168,7 @@ section {
     padding-top: 12rem;
     margin-left: 5rem;
     scroll-margin-top: 0;
-    /* Home doesn't need it as it's at the top */
+    
 }
 
 .home.home-content h1 {
@@ -240,7 +240,6 @@ span {
         box-shadow: 0 0 15px #94A378;
     }
 }
-
 
 
 .home-img img:hover {
