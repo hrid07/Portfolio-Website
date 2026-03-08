@@ -132,7 +132,7 @@
         },
         {
             "keywords": [
-                "skill",
+                "skills",
                 "language",
                 "coding",
                 "tech",
@@ -168,7 +168,7 @@
         },
         {
             "keywords": [
-                "project",
+                "projects",
                 "work",
                 "build",
                 "create",
@@ -237,12 +237,12 @@
     "synonyms": {
         "university": "aiub",
         "college": "education",
-        "coding": "skill",
-        "tech": "skill",
-        "software": "skill",
-        "built": "project",
-        "made": "project",
-        "created": "project",
+        "coding": "skills",
+        "tech": "skills",
+        "software": "skills",
+        "built": "projects",
+        "made": "projects",
+        "created": "projects",
         "reach": "contact",
         "mail": "email",
         "c++": "cpp",
